@@ -1,0 +1,20 @@
+<div class="card card-primary card-outline">    
+  <div class="card-header">
+    <b>Ticket</b>Management
+  </div>
+
+  <div class="card-body">
+    <h6 class="card-title">Welcome to ticket management</h6> 
+   <% if !current_user %>
+      <p class="card-text">For Using The ticket management Apllication you have to Register yourself on the application if you have already registered Simply click on <b>loging</b> button othrwise Register yourself using <b>signup</b> button</p>
+      <%= link_to('SignUp', new_user_path,:class => "btn btn-success") %>
+      <%= link_to('LogIn', new_session_path,:class => "btn btn-primary") %>
+    <% else %>
+    <script type="text/javascript">
+    window.location.href="/articles/"  // put your correct path in a string here
+    </script>
+    <%end%>
+  </div>
+</div>  
+
+

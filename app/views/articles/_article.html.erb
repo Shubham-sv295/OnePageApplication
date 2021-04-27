@@ -1,0 +1,7 @@
+<tr id = "<%=@article.id%>" >
+  <td><%= @article.id%></td>
+  <td><%= @article.title%></td>
+  <td><%= @article.description%></td>
+  <td><span class = "edit-article" id = "<%= @article.id%>" >edit</span></td>
+  <td><%= link_to("delete",article_path(@article.id), method: :delete, remote: true) %></td>
+</tr>

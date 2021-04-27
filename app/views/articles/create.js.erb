@@ -1,0 +1,5 @@
+var articles = document.querySelector("#show-articles table");
+articles.insertAdjacentHTML("beforeend", "<%= j render(@article) %>");
+document.querySelector("#new-article-form-div").style.display = "none";
+document.querySelector("#show-articles").style.display = "block";
+

@@ -1,0 +1,32 @@
+  <div class="card card-warning col-6">
+  <div class="card-header">
+    <h3 class="card-title">Update Article</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <%= form_for @article, remote: true, :html => { :id => "update-article-form"}, method: :patch do |f| %>
+      <div class="row">
+        <div class="col-12">
+          <!-- text input -->
+          <div class="form-group">
+            <label>Title</label>
+            <%= f.text_field :title, :class => "form-control", id: "title", :placeholder => "Enter ..."%>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- textarea -->
+          <div class="form-group">
+            <label>Description</label>
+            <%= f.text_area :description, :class => "form-control", id: "description", :placeholder => "Enter ..."%>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= f.submit "Update", :class => "btn btn-primary ", id: "update-article-btn-submit" %>
+      </div>
+    <% end %>
+  </div>
+  <!-- /.card-body -->
+</div>

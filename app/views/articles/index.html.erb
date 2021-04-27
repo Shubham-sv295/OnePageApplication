@@ -1,0 +1,30 @@
+<div class="card card-primary card-outline">    
+  <div class="card-header">
+    <b>Ticket</b>Management
+  </div>
+
+  <div class="card-body">
+    <h6 class="card-title">Welcome to ticket management</h6>
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.  
+      <%= link_to "Log Out", session_path(current_user.id), method: :delete %><br/>
+      <button class = "btn btn-primary new-article-btn" style = "margin-top: 20px;   margin-left: 20px;">New Article</button>
+		<div id = "show-articles">
+		  <%= render partial: "layouts/show_articles" %>
+		</div>
+		<div id = "new-article-form-div" style="display:none; margin-top: 20px;">
+		  <%= render partial: "layouts/new_article"%>
+		</div>
+		<div class = "update-article-form-div" style="display:none; margin-top: 20px;">
+		  <%= render partial: "layouts/article_form"%>
+		</div>
+		<br/> 
+   <% else %>
+      <p class="card-text">For Using The ticket management Apllication you have to Register yourself on the application if you have already registered Simply click on <b>loging</b> button othrwise Register yourself using <b>signup</b> button</p>
+      <%= link_to('SignUp', new_user_path,:class => "btn btn-success") %>
+      <%= link_to('LogIn', new_session_path,:class => "btn btn-primary") %>
+    <%end%>
+  </div>
+</div>  
+
+
